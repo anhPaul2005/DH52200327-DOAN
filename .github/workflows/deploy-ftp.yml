@@ -16,7 +16,7 @@ jobs:
       - name: Deploy to InfinityFree via FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
-          server: ${{ secrets.amoi.42web.io }}
-          username: ${{ secrets.if0_40617067 }}
-          password: ${{ secrets.Tuananh2901 }}
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
           server-dir: /htdocs/
