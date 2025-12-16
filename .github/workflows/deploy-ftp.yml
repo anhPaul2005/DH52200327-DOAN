@@ -1,0 +1,22 @@
+name: CI/CD Deploy Gundam Shop
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout source
+        uses: actions/checkout@v4
+
+      - name: Deploy to InfinityFree via FTP
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.amoi.42web.io }}
+          username: ${{ secrets.if0_40617067 }}
+          password: ${{ secrets.Tuananh2901 }}
+          server-dir: /htdocs/
