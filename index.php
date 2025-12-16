@@ -278,6 +278,7 @@ $products = $stmt->fetchAll();
     </style>
 </head>
 <body>
+    <p>TEST CI/CD - <?php echo date('H:i:s'); ?></p>
     <div class="container">
         <header>
             <h1>🤖 MOI Gundam</h1>
