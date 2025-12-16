@@ -1,0 +1,18 @@
+# Bảo mật cho thư mục images
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    
+    # Chặn truy cập file .php trong thư mục images
+    RewriteCond %{REQUEST_URI} ^/images/.*\.php$ [NC]
+    RewriteRule .* - [F,L]
+</IfModule>
+
+# Giới hạn loại file có thể truy cập trong images
+<FilesMatch "\.(jpg|jpeg|png|gif|webp)$">
+    Allow from all
+</FilesMatch>
+
+# Chặn các file khác
+<FilesMatch "(?<!\.jpg|\.jpeg|\.png|\.gif|\.webp)$">
+    Deny from all
+</FilesMatch>
