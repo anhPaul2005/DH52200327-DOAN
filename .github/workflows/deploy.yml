@@ -1,0 +1,23 @@
+name: CI/CD Demo Gundam Shop
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout source code
+        uses: actions/checkout@v4
+
+      - name: Build & Test (demo)
+        run: |
+          echo "Build project"
+          echo "Test project"
+
+      - name: Deploy step (demo)
+        run: |
+          echo "Deploying project to web server"
